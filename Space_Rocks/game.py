@@ -1,9 +1,12 @@
 import pygame
 
+from utils import load_sprite
+
 class SpaceRocks:
     def __init__(self):
         self.__init__pygame()
         self.screen = pygame.display.set_mode((800,600))
+        self.background = load_sprite("space", False)
     
     def main_loop(self):
         while True:
@@ -24,5 +27,5 @@ class SpaceRocks:
         pass
 
     def _draw(self):
-        self.screen.fill((0,0,255))
+        self.screen.blit(self.background, (0,0))
         pygame.display.flip()
